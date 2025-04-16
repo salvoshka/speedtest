@@ -228,34 +228,7 @@
             const ipAddressEl = document.getElementById('ip-address');
             const ispEl = document.getElementById('isp');
 
-            let s = new Speedtest();
-
-document.getElementById("start-test").addEventListener("click", function () {
-    s.onupdate = data => {
-        if (data.download) {
-            document.getElementById("download-speed").textContent = (data.download / 1e6).toFixed(2); // in Mbps
-            document.getElementById("test-progress").style.width = "40%";
-        }
-        if (data.upload) {
-            document.getElementById("upload-speed").textContent = (data.upload / 1e6).toFixed(2); // in Mbps
-            document.getElementById("test-progress").style.width = "80%";
-        }
-        if (data.ping) {
-            document.getElementById("ping").textContent = data.ping.toFixed(0); // in ms
-            document.getElementById("test-progress").style.width = "20%";
-        }
-    };
-
-    s.onend = () => {
-        document.getElementById("test-status").textContent = "Test Completed!";
-        document.getElementById("test-progress").style.width = "100%";
-        document.getElementById("start-test").disabled = false;
-    };
-
-    document.getElementById("start-test").disabled = true;
-    document.getElementById("test-status").textContent = "Testing...";
-    s.start();
-});
+            
 
             
             // Test history array
